@@ -14,7 +14,6 @@
       color: white;
     }
 
-    /* HEADER */
     header {
       background: linear-gradient(90deg, #72A3ED, #3C6BC9);
       padding: 20px 40px;
@@ -27,7 +26,6 @@
       box-shadow: 0 0 25px rgba(114,163,237,0.6);
     }
 
-    /* CONTENEDOR FOTO + NOMBRE */
     .perfil-header {
       display: flex;
       align-items: center;
@@ -60,7 +58,6 @@
 
     .nav-links a:hover { color: #dce8ff; }
 
-    /* SECCIONES */
     section {
       padding: 100px 60px;
       display: flex;
@@ -86,7 +83,6 @@
       text-align: center;
     }
 
-    /* CATEGORÍAS SIN FLECHA */
     .categoria {
       background: #72A3ED;
       color: white;
@@ -124,7 +120,6 @@
 
     .lista li:hover { background: #e0ebff; }
 
-    /* CERTIFICADOS */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -158,7 +153,6 @@
       font-weight: bold;
     }
 
-    /* HABILIDADES EN COLUMNAS */
     .habilidades-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -166,49 +160,59 @@
       margin-top: 30px;
     }
 
-    /* ESTILO PARA PÁGINAS WEB */
-    .web-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    .web-container {
+      display: flex;
+      justify-content: center;
       margin-top: 20px;
     }
 
     .web-card {
       background: white;
       color: #1A2E49;
-      padding: 25px;
-      border-radius: 15px;
+      padding: 30px;
+      border-radius: 20px;
       border: 3px solid #72A3ED;
       text-align: center;
       transition: 0.3s;
+      max-width: 500px;
+      width: 100%;
     }
 
     .web-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
       background: #eaf2ff;
     }
 
     .web-card h3 {
       margin-top: 0;
       color: #3C6BC9;
+      font-size: 24px;
     }
 
     .web-card p {
-      margin: 15px 0;
+      margin: 20px 0;
       font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .web-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 25px;
     }
 
     .web-btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background: #72A3ED;
       color: white;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
+      border: none;
+      cursor: pointer;
     }
 
     .web-btn:hover {
@@ -216,21 +220,24 @@
       transform: translateY(-2px);
     }
 
-    /* Estilo para las miniaturas de sitios web */
     .web-thumbnail {
       width: 100%;
-      height: 140px;
-      background: linear-gradient(135deg, #72A3ED, #3C6BC9);
-      border-radius: 10px;
-      margin-bottom: 15px;
+      height: 200px;
+      background: linear-gradient(135deg, #FF69B4, #FF1493);
+      border-radius: 15px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 14px;
+      font-size: 48px;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       box-sizing: border-box;
+    }
+
+    .categoria.maquillaje {
+      background: linear-gradient(135deg, #FF69B4, #FF1493);
     }
 
   </style>
@@ -238,7 +245,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="perfil-header">
     <img src="imagenes/foto.jpg" alt="Foto de perfil" />
@@ -254,7 +260,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section id="hero">
   <div class="card">
     <h1>Bienvenido a mi Curriculum</h1>
@@ -262,7 +267,6 @@
   </div>
 </section>
 
-<!-- SOBRE MI -->
 <section id="sobre-mi">
   <div class="card">
     <h2>Sobre Mí</h2>
@@ -276,7 +280,6 @@
   </div>
 </section>
 
-<!-- PROYECTOS -->
 <section id="proyectos">
   <div class="card">
     <h2>Mis Trabajos Académicos</h2>
@@ -296,51 +299,23 @@
       </ul>
     </div>
 
-    <!-- NUEVO APARTADO: PÁGINAS WEB -->
-    <div class="categoria" onclick="toggle('paginas-web')">🌐 Páginas Web</div>
-    <div id="paginas-web" class="contenido">
-      <div class="web-grid">
-        
+    <div class="categoria maquillaje" onclick="toggle('pagina-maquillaje')">💄 Página Web de Maquillaje</div>
+    <div id="pagina-maquillaje" class="contenido">
+      <div class="web-container">
         <div class="web-card">
           <div class="web-thumbnail">
-            🌟 Portafolio Personal
+            💄✨
           </div>
-          <h3>Portafolio Personal</h3>
-          <p>Mi primer portafolio web desarrollado con HTML, CSS y JavaScript. Incluye diseño responsive y animaciones.</p>
-          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
-          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
-        </div>
-
-        <div class="web-card">
-          <div class="web-thumbnail">
-            📝 Blog de Tecnología
+          <h3>Glamour Beauty</h3>
+          <p>
+            <strong>Mi página web de maquillaje</strong><br><br>
+            Un sitio web dedicado al mundo del maquillaje, donde comparto tips, tutoriales, reseñas de productos y las últimas tendencias en belleza. Desarrollado con HTML5, CSS3 y JavaScript, con un diseño elegante y responsive.
+          </p>
+          <div class="web-buttons">
+            <a href="#" class="web-btn" target="_blank">🌐 Ver sitio web</a>
+            <a href="#" class="web-btn">📁 Ver código</a>
           </div>
-          <h3>Blog Tech</h3>
-          <p>Blog personal sobre ciberseguridad y programación. Desarrollado con HTML5 y CSS3.</p>
-          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
-          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
         </div>
-
-        <div class="web-card">
-          <div class="web-thumbnail">
-            ✅ Lista de Tareas
-          </div>
-          <h3>Task Manager</h3>
-          <p>Aplicación web interactiva para gestión de tareas con JavaScript y LocalStorage.</p>
-          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
-          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
-        </div>
-
-        <div class="web-card">
-          <div class="web-thumbnail">
-            ⚡ Landing Page
-          </div>
-          <h3>Landing Page Empresarial</h3>
-          <p>Sitio web corporativo con diseño moderno, formulario de contacto y secciones informativas.</p>
-          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
-          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
-        </div>
-
       </div>
     </div>
 
@@ -371,7 +346,6 @@
   </div>
 </section>
 
-<!-- CERTIFICADOS -->
 <section id="certificados">
   <div class="card">
     <h2>Certificados</h2>
@@ -389,14 +363,12 @@
   </div>
 </section>
 
-<!-- HABILIDADES -->
 <section id="habilidades">
   <div class="card">
     <h2>Habilidades</h2>
 
     <div class="habilidades-grid">
 
-      <!-- Columna 1 -->
       <div>
         <h3>Habilidades Técnicas</h3>
         <ul class="lista">
@@ -410,7 +382,6 @@
         </ul>
       </div>
 
-      <!-- Columna 2 -->
       <div>
         <h3>Habilidades en Herramientas</h3>
         <ul class="lista">
@@ -443,3 +414,4 @@ function toggle(id) {
 
 </body>
 </html>
+
