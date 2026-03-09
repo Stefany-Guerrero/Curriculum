@@ -166,6 +166,73 @@
       margin-top: 30px;
     }
 
+    /* ESTILO PARA PÁGINAS WEB */
+    .web-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .web-card {
+      background: white;
+      color: #1A2E49;
+      padding: 25px;
+      border-radius: 15px;
+      border: 3px solid #72A3ED;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .web-card:hover {
+      transform: scale(1.05);
+      background: #eaf2ff;
+    }
+
+    .web-card h3 {
+      margin-top: 0;
+      color: #3C6BC9;
+    }
+
+    .web-card p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .web-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #72A3ED;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .web-btn:hover {
+      background: #3C6BC9;
+      transform: translateY(-2px);
+    }
+
+    /* Estilo para las miniaturas de sitios web */
+    .web-thumbnail {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(135deg, #72A3ED, #3C6BC9);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
   </style>
 </head>
 
@@ -227,6 +294,54 @@
         <li><a href="proyectos/parciales/Parcial%201.zip" download>Parcial 1</a></li>
         <li><a href="proyectos/parciales/Parcial%202.zip" download>Parcial 2</a></li>
       </ul>
+    </div>
+
+    <!-- NUEVO APARTADO: PÁGINAS WEB -->
+    <div class="categoria" onclick="toggle('paginas-web')">🌐 Páginas Web</div>
+    <div id="paginas-web" class="contenido">
+      <div class="web-grid">
+        
+        <div class="web-card">
+          <div class="web-thumbnail">
+            🌟 Portafolio Personal
+          </div>
+          <h3>Portafolio Personal</h3>
+          <p>Mi primer portafolio web desarrollado con HTML, CSS y JavaScript. Incluye diseño responsive y animaciones.</p>
+          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
+          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
+        </div>
+
+        <div class="web-card">
+          <div class="web-thumbnail">
+            📝 Blog de Tecnología
+          </div>
+          <h3>Blog Tech</h3>
+          <p>Blog personal sobre ciberseguridad y programación. Desarrollado con HTML5 y CSS3.</p>
+          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
+          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
+        </div>
+
+        <div class="web-card">
+          <div class="web-thumbnail">
+            ✅ Lista de Tareas
+          </div>
+          <h3>Task Manager</h3>
+          <p>Aplicación web interactiva para gestión de tareas con JavaScript y LocalStorage.</p>
+          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
+          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
+        </div>
+
+        <div class="web-card">
+          <div class="web-thumbnail">
+            ⚡ Landing Page
+          </div>
+          <h3>Landing Page Empresarial</h3>
+          <p>Sitio web corporativo con diseño moderno, formulario de contacto y secciones informativas.</p>
+          <a href="#" class="web-btn" target="_blank">Ver sitio</a>
+          <a href="#" class="web-btn" style="margin-left: 10px;">Código</a>
+        </div>
+
+      </div>
     </div>
 
     <div class="categoria" onclick="toggle('investigaciones')">Investigaciones</div>
@@ -318,55 +433,13 @@
 function toggle(id) {
   const el = document.getElementById(id);
 
-  // Cerrar los demás
   document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
-  // Abrir/cerrar el seleccionado
   el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
